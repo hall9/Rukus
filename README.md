@@ -1,2 +1,6 @@
-# Rukus
-This is the ReadMe file for Rukus. There will be more updates soon...
+Rukus
+=================
+
+
+Project Details
+-----------
