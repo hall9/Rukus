@@ -1,0 +1,9 @@
+<h1>Rukus Feed</h1>
+<ol>
+  <%for post in @posts %>
+      <li>
+        <p>"<%=post.text%>" Votes: <%=post.votes%></p>
+        <hr>
+      </li>
+    <%end%>
+</ol>
