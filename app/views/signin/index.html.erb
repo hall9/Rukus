@@ -4,11 +4,14 @@
     <h2 style="color: white; padding:50px;">Welcome to Rukus</h2>
   </div>
 
+  <p><%=@location.city%></p>
+  <label for="session_username">Username</label>
+  <input class="form-control" id="session_username"
+         name="session[username]" type="text" />
+  <label for="session_password">Password</label>
+  <input id="session_password" name="session[password]"
+         type="password" />
     <div class="center-block text-center">
-      <br>
-      <br>
         <%= button_to 'Sign In' %>
-
-
     </div>
 </div>
