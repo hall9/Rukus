@@ -1,9 +1,24 @@
-<h1>Rukus Feed</h1>
-<ol>
-  <%for post in @posts %>
-      <li>
-        <p>"<%=post.text%>" Votes: <%=post.votes%></p>
-        <hr>
-      </li>
-    <%end%>
-</ol>
+
+<div class="container-fluid">
+
+  <div class="col-md-12 header">
+    <p class="title">Rukus</p>
+  </div>
+  <div class="col-md-3">
+    <ul class="nav">
+      <li><a>My Posts</a></li>
+      <li><a>My Replies</a></li>
+      <li><a>My Favorites</a></li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <ul>
+      <%for post in @posts %>
+          <li>
+            <p>"<%=post.text%>" Votes: <%=post.votes%></p>
+            <hr>
+          </li>
+        <%end%>
+    </ul>
+    </div>
+</div>
