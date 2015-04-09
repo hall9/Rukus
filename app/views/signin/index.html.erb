@@ -3,8 +3,11 @@
   <div class="header text-center">
     <h2 style="color: white; padding:50px;">Welcome to Rukus</h2>
   </div>
+  <p><%=@remote_ip%></p>
+  <p><%=@lat%></p>
+  <p><%=@lng%></p>
+  <p><%=@location.all%></p>
 
-  <p><%=@location.city%></p>
   <label for="session_username">Username</label>
   <input class="form-control" id="session_username"
          name="session[username]" type="text" />
