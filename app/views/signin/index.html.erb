@@ -3,18 +3,47 @@
   <div class="header text-center">
     <h2 style="color: white; padding:50px;">Welcome to Rukus</h2>
   </div>
-  <p><%=@remote_ip%></p>
+
+  <!--<p><%=@remote_ip%></p>
   <p><%=@lat%></p>
   <p><%=@lng%></p>
-  <p><%=@location.all%></p>
+  <p><%=@location.all%></p> -->
 
+  <p id="demo"></p>
+
+  <div class="center-block text-center">
+    <div>
   <label for="session_username">Username</label>
-  <input class="form-control" id="session_username"
+  <input id="session_username"
          name="session[username]" type="text" />
+    </div>
+    <div>
   <label for="session_password">Password</label>
   <input id="session_password" name="session[password]"
          type="password" />
-    <div class="center-block text-center">
-        <%= button_to 'Sign In' %>
+    </div>
+      <form method="post" action="/feed/index">
+        <div>
+          <input value="Sign In" type="submit" onclick="getLocation()"/>
+        </div>
+      </form>
     </div>
 </div>
+
+
+<script>
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+    }
+</script>

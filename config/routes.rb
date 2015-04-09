@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'signin/index'
 
   get 'feed/index'
+  post 'feed/index'
 
   root 'signin#index'
 
