@@ -1,6 +1,4 @@
 
-<p><%=@remote_ip%></p>
-
 <div class="container-fluid">
 
   <div class="col-md-12 header">
@@ -14,8 +12,8 @@
     </ul>
   </div>
   <div class="col-md-9">
+    <br/>
     <ul>
-      <p><%@lat%></p>
       <%for post in @posts %>
           <li>
             <p>"<%=post.text%>" Votes: <%=post.votes%></p>
