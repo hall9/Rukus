@@ -7,11 +7,6 @@ class SigninController < ApplicationController
     #In order to find the lat and long, we must have the global IP
     #@remote_ip = request.remote_ip
     #@location = IpGeocoder.geocode(IPSocket.getaddress(Socket.gethostname))
-    @location = Geokit::Geocoders::IpGeocoder.geocode(request.remote_ip)
-    if @location.success
-      @lat = @location.lat
-      @lng = @location.lng
-    end
 
     #@location = GeoKit::Geocoders::IpGeocoder.geocode(IPSocket.getaddress(Socket.gethostname))
     if request.post?
