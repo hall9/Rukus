@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :posts
+
+  get 'post/index'
+
   devise_for :users
   get 'signin/index'
 
