@@ -11,12 +11,20 @@
       <li><a>My Favorites</a></li>
     </ul>
   </div>
-  <div class="col-md-9">
+
+  <div class="col-md-6">
     <br/>
+    <%= link_to 'New Post', new_post_path %>
+    <br/>
+    <hr>
     <ul>
       <%for post in @posts %>
           <li>
-            <p>"<%=post.text%>" Votes: <%=post.votes%></p>
+            <p class="votes"><%=post.votes%></p>
+
+            <p class="content"><%=post.content%></p>
+
+            <td class="comments"><%= link_to 'Commnets', post %></td>
             <hr>
           </li>
         <%end%>
