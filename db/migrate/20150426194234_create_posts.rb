@@ -5,7 +5,8 @@ class CreatePosts < ActiveRecord::Migration
       t.text :lat
       t.text :long
       t.integer :votes
-      t.text :user
+      t.belongs_to :User
+      t.integer :postion
 
       t.timestamps null: false
     end

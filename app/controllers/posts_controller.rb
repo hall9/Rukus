@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.find(params[:id])
     #@comments = Post.find(params[:id]).comments
+    #@comments = Comment.where({Post:params[:id]})
     @comments = Comment.all
   end
 
