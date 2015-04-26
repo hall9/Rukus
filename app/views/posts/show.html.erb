@@ -1,29 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+  <div class="col-md-12 header">
+    <p class="title">Rukus</p>
+  </div>
+  <div class="col-md-3">
+    <ul class="nav">
+      <li><a>My Posts</a></li>
+      <li><a>My Replies</a></li>
+      <li><a>My Favorites</a></li>
+    </ul>
+  </div>
 
-<p>
-  <strong>Lat:</strong>
-  <%= @post.lat %>
-</p>
 
-<p>
-  <strong>Long:</strong>
-  <%= @post.long %>
-</p>
+  <div class="op">
+    <p class="votes"><%=@post.votes%></p>
+    <p class="content"><%=@post.content%></p>
+  </div>
 
-<p>
-  <strong>Votes:</strong>
-  <%= @post.votes %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <div class="opcomments">
+    <% @comments.each do |comment| %>
+        <p class="votes"><%=comment.votes%></p>
+        <p class="comments"><%=comment.content%></p>
+    <%end%>
+  </div>
+</div>

@@ -18,13 +18,13 @@
     <br/>
     <hr>
     <ul>
-      <%for post in @posts %>
+      <%@posts.each do |post| %>
           <li>
             <p class="votes"><%=post.votes%></p>
 
             <p class="content"><%=post.content%></p>
 
-            <td class="comments"><%= link_to 'Comments', post %></td>
+            <%= link_to t('.index', :default => t("Comments")),view_url(post.id)%>
             <hr>
           </li>
         <%end%>
