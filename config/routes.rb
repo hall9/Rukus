@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
   resources :posts
-
-  get 'post/index'
-
+  get 'posts/:id/comments' => 'posts#index', as: :view
+  resources :comments
+  get 'posts/:id/comment/new' => 'comments#new', as: :new
   devise_for :users
-  get 'signin/index'
+  get 'signin' => 'signin#index'
 
-  get 'feed/index'
+  get 'feed' => 'feed#index'
   post 'feed/index'
 
   root 'signin#index'

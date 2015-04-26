@@ -1,30 +1,18 @@
 
 <div class="container-fluid">
-
-  <div class="col-md-12 header">
-    <p class="title">Rukus</p>
-  </div>
-  <div class="col-md-3">
-    <ul class="nav">
-      <li><a>My Posts</a></li>
-      <li><a>My Replies</a></li>
-      <li><a>My Favorites</a></li>
-    </ul>
-  </div>
-
   <div class="col-md-6">
     <br/>
     <%= link_to 'New Post', new_post_path %>
     <br/>
     <hr>
     <ul>
-      <%for post in @posts %>
+      <%@posts.each do |post| %>
           <li>
             <p class="votes"><%=post.votes%></p>
 
             <p class="content"><%=post.content%></p>
 
-            <td class="comments"><%= link_to 'Comments', post %></td>
+            <%= link_to t('.index', :default => t("Comments")),view_url(post.id)%>
             <hr>
           </li>
         <%end%>

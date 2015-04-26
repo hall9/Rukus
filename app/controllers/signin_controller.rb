@@ -12,7 +12,7 @@ class SigninController < ApplicationController
     if request.post?
       #post geolocation info and redirect to feed
       #also handle authentication
-      redirect_to feed_index_url
+      redirect_to feed_path
     end
 
   end
