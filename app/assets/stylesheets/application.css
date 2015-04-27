@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+.container-narrow {
+    background-color: orange;
+}
 .title{
     color: white;
     font-size: 75px;
@@ -22,7 +24,7 @@
 }
 .header{
     background-color: orange;
-    height: 100px;
+    height: 50px;
 }
 /* User sign in and sign forms. */
 .border-form-div {

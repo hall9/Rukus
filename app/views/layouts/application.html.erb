@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="col-md-12 header">
-  <p class="title">Rukus</p>
+
+<div class="container-narrow">
+  <div class="masthead">
+    <%= render 'layouts/user_header' %>
+    <h3 class="muted" style="color:#ffffff"><%= link_to "RUKUS", root_path %></h3>
+  </div>
+  <hr />
 </div>
 
 <!--There has to be a better way to write these if statements-->
