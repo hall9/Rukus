@@ -1,8 +1,5 @@
 <div class="container-fluid">
 
-  <div class="header text-center">
-    <h2 style="color: white; padding:50px;">Welcome to Rukus</h2>
-  </div>
 
   <!--<p id="demo"></p>
 
@@ -27,7 +24,23 @@
     </div>-->
 
 </div>
+<div style="text-align: center;">
+  <% if !user_signed_in? %>
+      <div class="jumbotron">
 
+      <h1>Welcome!</h1>
+      <p class="lead">
+        You must sign in or sign up before you can start creating some Rukus.
+      </p>
+      <div class="row-fluid">
+        <div class="span6">
+          <%= link_to "Sign In", new_user_session_path, :class => "btn btn-success" %>
+          <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-success" %>
+        </div>
+      </div>
+  </div>
+  <% end %>
+</div>
 
 <script>
     var x = document.getElementById("demo");
