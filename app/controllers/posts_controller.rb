@@ -4,15 +4,17 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @post = Post.find(params[:id])
-    #@comments = Post.find(params[:id]).comments
-    #@comments = Comment.where({Post:params[:id]})
-    @comments = Comment.all
+    @lat = params[:submit]
+    @posts = Post.all #@posts = Post.where(lon and lat is close)
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find(params[:id])
+    #@comments = Post.find(params[:id]).comments
+    #@comments = Comment.where({Post:params[:id]})
+    @comments = Comment.all
   end
 
   # GET /posts/new
@@ -21,8 +23,8 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1/edit
-  def edit
-  end
+  #def edit
+  #end
 
   # POST /posts
   # POST /posts.json

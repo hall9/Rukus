@@ -11,14 +11,12 @@ Post.create(:text => "This is test text 1",
             :lat => "39.3909764",
             :lon => "-76.6061574",
             :votes => "2",
-            :user => "Bill"
 )
 
 Post.create(:text => "Test 2",
             :lat => "39.3909390",
             :lon => "-76.6061601",
             :votes => "1",
-            :user => "Tim"
 )
 
 

@@ -8,37 +8,18 @@
 </head>
 <body>
 
-<div class="container-narrow">
-  <div class="masthead">
-    <%= render 'layouts/user_header' %>
-    <h3 class="muted" style="color:#ffffff"><%= link_to "RUKUS", root_path %></h3>
+<%= render 'layouts/user_header' %>
+
+<div id="content">
+<%= render 'layouts/post_feed' %>
+  <%= yield %>
+
+  <div class="notification">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </div>
-  <hr />
+
 </div>
-
-<!--There has to be a better way to write these if statements-->
-<% if !current_page?('/users/sign_in') %>
-    <% if !current_page?('/') %>
-        <% if !current_page?('/users/sign_up') %>
-
-<div class="col-md-3">
-  <ul class="nav">
-    <li><a>My Posts</a></li>
-    <li><a>My Replies</a></li>
-    <li><a>My Favorites</a></li>
-  </ul>
-</div>
-<%end%>
-<%end%>
-<%end%>
-
-
-
-<%= yield %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= render 'layouts/user_widget' %>
-
 
 </body>
 </html>

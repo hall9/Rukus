@@ -1,26 +1,26 @@
-<div class="container-fluid">
+<div class="col-md-6" id="post">
+  <br/>
+<div class="op">
+  <p class="votes"><%=@post.votes%></p>
+  <p class="content"><%=@post.content%></p>
+</div>
 
-  <div class="col-md-12 header">
-    <p class="title">Rukus</p>
-  </div>
-  <div class="col-md-3">
-    <ul class="nav">
-      <li><a>My Posts</a></li>
-      <li><a>My Replies</a></li>
-      <li><a>My Favorites</a></li>
-    </ul>
-  </div>
+  <hr>
+  <br/>
+<%= link_to t('.index', :default => t("New comment")),new_url(@post.id)%>
 
+  <br/>
+  <hr>
 
-  <div class="op">
-    <p class="votes"><%=@post.votes%></p>
-    <p class="content"><%=@post.content%></p>
-  </div>
-
-  <div class="opcomments">
-    <% @comments.each do |comment| %>
-        <p class="votes"><%=comment.votes%></p>
-        <p class="comments"><%=comment.content%></p>
-    <%end%>
-  </div>
+<div class="opcomments">
+  <ul class="comments">
+  <% @comments.each do |comment| %>
+        <li>
+      <!--<p class="votes"><%=comment.votes%></p>-->
+      <p class="comment"><%=comment.content%></p>
+        </li>
+        <hr>
+  <%end%>
+  </ul>
+</div>
 </div>

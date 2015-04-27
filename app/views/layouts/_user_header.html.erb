@@ -1,8 +1,16 @@
+<div class="container-narrow" id="banner">
+  <div class="masthead">
 <ul class="nav nav-pills pull-right">
   <% if user_signed_in? %>
+      <li><a><%= current_user.email %></a></li>
       <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
   <% else %>
       <li><%= link_to "Sign in", new_user_session_path %></li>
       <li><%= link_to "Sign up", new_user_registration_path %></li>
   <% end %>
-</ul>
+  </ul>
+    <div id="logo">
+    <h3 class="muted" style="color:#ffffff"><%= link_to "RUKUS", feed_path %></h3>
+    </div>
+  </div>
+</div>
