@@ -8,13 +8,15 @@
 </head>
 <body>
 
-<div class="container-narrow">
-  <div class="masthead">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
     <%= render 'layouts/user_header' %>
-    <h3 class="muted" style="color:#ffffff"><%= link_to "RUKUS", root_path %></h3>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">RUKUS</a>
+    </div>
   </div>
-  <hr />
-</div>
+</nav>
+
 
 <!--There has to be a better way to write these if statements-->
 <% if !current_page?('/users/sign_in') %>

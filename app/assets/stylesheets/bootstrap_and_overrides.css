@@ -5,3 +5,16 @@
   To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
   =require twitter-bootstrap-static/fontawesome
   */
+
+.navbar-default .navbar-header .navbar-brand {
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.navbar-default .navbar-header{
+    background-color: orange;
+}
+.navbar-default {
+    background-color: orange;
+}
