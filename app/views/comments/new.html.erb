@@ -1,5 +1,9 @@
-<h1>New Comment</h1>
+<div class="col-md-6">
 
-<%= render 'form' %>
+  <%= link_to 'Back', view_url(@post_id) %>
 
-<%= link_to 'Back', comments_path %>
+  <h3>New Comment</h3>
+
+  <%= render 'form' %>
+
+</div>

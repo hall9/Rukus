@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+    <div class="col-md-3" id="nav">
+      <ul class="nav">
+        <li><%= link_to( 'The Feed', feed_path) %></li>
+        <li><%= link_to( 'My Rukus', feed_path) %></li>
+        <li><%= link_to( 'My Comments', feed_path) %></li>
+        <li><%= link_to( 'My Favorites', feed_path) %></li>
+      </ul>
+    </div>
+<% end %>

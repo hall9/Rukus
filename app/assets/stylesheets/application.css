@@ -53,3 +53,23 @@
     margin-bottom: 15px;
     padding: 7px 9px;
 }
+
+html {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+#banner {
+    height: 5em;
+    margin-bottom: 2em;
+}
+
+#logo {
+    padding-left: 1.5em;
+    padding-top: .5em;
+}
+
+ul
+{
+    list-style-type: none;
+}

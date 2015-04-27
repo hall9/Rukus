@@ -1,15 +1,18 @@
+<div class="col-md-6" id="posts">
+    <br/>
+    <%= link_to 'New Post', new_post_path %>
+    <br/>
+    <hr>
+    <ul>
+      <%@posts.each do |post| %>
+          <li>
+            <!-- <p class="votes"><%=post.votes%></p> -->
 
+            <p class="content"><%=post.content%></p>
 
-  <div class="op">
-    <p class="votes"><%=@post.votes%></p>
-    <p class="content"><%=@post.content%></p>
-  </div>
-
-  <%= link_to t('.index', :default => t("New comment")),new_url(@post.id)%>
-
-  <div class="opcomments">
-    <% @comments.each do |comment| %>
-        <p class="votes"><%=comment.votes%></p>
-        <p class="comments"><%=comment.content%></p>
-    <%end%>
+            <%= link_to t('.index', :default => t("Comments")),view_url(post.id)%>
+            <hr>
+          </li>
+      <%end%>
+    </ul>
   </div>

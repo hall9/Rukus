@@ -1,8 +1,16 @@
+<nav class="navbar navbar-default" id="banner">
+      <div class="container-fluid">
 <ul class="nav nav-pills pull-right">
   <% if user_signed_in? %>
+      <li><a><%= current_user.email %></a></li>
       <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
   <% else %>
       <li><%= link_to "Sign in", new_user_session_path %></li>
       <li><%= link_to "Sign up", new_user_registration_path %></li>
   <% end %>
-</ul>
+  </ul>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">RUKUS</a>
+        </div>
+      </div>
+</nav>
