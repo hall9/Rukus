@@ -7,3 +7,66 @@
   width: 22em;
   height: 5em;
 }
+.panel-footer {
+  padding: 5px 15px;
+}
+.col-md-offset-3 {
+  margin-left: -1%;
+}
+
+body {
+  padding-bottom: 40px;
+}
+.facebook-share-box {
+  width: 100%;
+}
+.facebook-share-box .share {
+  -webkit-transition: 0.1s ease-out height;
+  -moz-transition: 0.1s ease-out height;
+  -ms-transition: 0.1s ease-out height;
+  -o-transition: 0.1s ease-out height;
+  transition: 0.1s ease-out height;
+  clear: both;
+  background: white;
+  border: 2px solid #dddddd;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+
+.facebook-share-box .post-types li a {
+  color: #085083;
+  text-decoration: none;
+}
+
+.facebook-share-box .post-types li a.active {
+  color: #404040;
+}
+
+.facebook-share-box .post-types {
+  padding-left: 5px;
+}
+
+.facebook-share-box ul {
+  list-style: none;
+  margin-bottom: 9px;
+}
+
+.facebook-share-box .post-types li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.message {
+  border-radius: 0;
+  border: none;
+}
+.panel {
+  border-radius: 0;
+  border: none;
+  margin-bottom: 0;
+}
+
+.privacy-dropdown {
+  width: 100px;
+}
