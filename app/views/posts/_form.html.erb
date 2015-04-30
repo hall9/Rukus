@@ -1,21 +1,36 @@
 <%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <form action="#" method="post" role="form" enctype="multipart/form-data" class="facebook-share-box">
+      <div class="share">
+        <div class="panel panel-default">
+          <div class="panel-heading"><b>New Rukus</b></div>
+          <div class="panel-body">
+            <div class="">
+              <%= f.text_area :content, :placeholder => "What's on your mind?", :class=>'form-control message' %>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <%= f.submit :class => 'btn btn-primary' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
     <!--
   <div class="field">
     <%= f.label :lat %><br>
@@ -34,8 +49,4 @@
     <%= f.text_area :user %>
   </div>
   !-->
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
