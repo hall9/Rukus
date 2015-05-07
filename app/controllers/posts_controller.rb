@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     #@comments = Post.find(params[:id]).comments
     #@comments = Comment.where({Post:params[:id]})
-    @comments = Comment.all
+    @comments = @post.comments
   end
 
   # GET /posts/new

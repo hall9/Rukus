@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :posts
+  resources :posts, only: [:index, :new, :create, :show]
   get 'posts/:id' => 'posts#index', as: :view
-  resources :comments
+  resources :comments, only: [:new, :create]
   get 'posts/:id/comment/new' => 'comments#new', as: :new
+
   devise_for :users
   get 'signin' => 'signin#index'
 

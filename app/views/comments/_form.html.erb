@@ -16,6 +16,7 @@
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
+    <%= f.hidden_field :Post_id, :value => params[:id] %>
   </div>
   <div class="actions">
     <%= f.submit %>
