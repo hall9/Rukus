@@ -10,6 +10,7 @@
           </div>
           <div class="panel-footer">
             <div class="row">
+              <%= f.hidden_field :User_id, :value => current_user.id %>
               <div class="col-md-5">
                 <div class="form-group">
                   <%= f.submit :class => 'btn btn-primary' %>
