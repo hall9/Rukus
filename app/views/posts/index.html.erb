@@ -6,6 +6,7 @@
       <br/>
       <hr>
       <%@posts.each do |post| %>
+          <%= link_to view_url(post.id) do %>
           <div class="jumbotron col-md-12" id="post">
             <li>
               <div class="col-md-10">
@@ -14,21 +15,19 @@
                 <%= link_to t('.index', :default => t("Comments")),view_url(post.id)%>
               </div>
               <div class="col-md-2 votes">
-                <div class="upvote"></div>
+                <%= link_to upvote_post_path(post), method: :put do %>
+                    <div class="upvote"></div>
+                <%end%>
                 <br>
-                <div class="votes"> <%=post.votes %> </div>
+                <div class="vote"> <%=post.votes %> </div>
                 <br>
-                <div class="downvote"></div>
+                <%= link_to downvote_post_path(post), method: :put do %>
+                    <div class="downvote"></div>
+                <%end%>
               </div>
               </li>
           </div>
+          <%end%>
       <%end%>
     </ul>
 </div>
-
-<script>
-    document.getElementById("post").onmousedown = function () {
-        //comments
-        //alert("Send to comments")
-    };
-</script>

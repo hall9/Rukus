@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :posts, only: [:index, :new, :create, :show]
+  resources :posts, only: [:index, :new, :create, :show, :upvote] do
+    member do
+      put 'upvote', to: 'posts#upvote'
+      put 'downvote', to: 'posts#downvote'
+    end
+  end
+
   get 'posts/:id' => 'posts#index', as: :view
+
+
   resources :comments, only: [:new, :create]
   get 'posts/:id/comment/new' => 'comments#new', as: :new
 
