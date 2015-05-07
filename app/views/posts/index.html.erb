@@ -7,12 +7,11 @@
       <hr>
       <%@posts.each do |post| %>
           <%= link_to view_url(post.id) do %>
-          <div class="jumbotron col-md-12" id="post">
+          <div class="postframe col-md-12" id="post">
             <li>
               <div class="col-md-10">
                 <!-- <p class="votes"><%=post.votes%></p> -->
-                <p class="content"><%=post.content%></p>
-                <%= link_to t('.index', :default => t("Comments")),view_url(post.id)%>
+                <p class="post-content"><%=post.content%></p>
               </div>
               <div class="col-md-2 votes">
                 <%= link_to upvote_post_path(post), method: :put do %>
@@ -28,6 +27,9 @@
               </li>
           </div>
           <%end%>
+          <div>
+            <span class="space"></span>
+          </div>
       <%end%>
     </ul>
 </div>

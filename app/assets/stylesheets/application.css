@@ -15,17 +15,24 @@
  */
 
 .container-narrow {
-    background-color: orange;
+    background-color: #363636;
 }
-.title{
-    color: white;
-    font-size: 75px;
-    font-weight: bold;
-    margin: 30px 10px 10px 10px;
+.title-rukus{
+    paddin-top:15px !important;
+    padding-left:15px !important;
+    line-height: normal !important;
+    position: static;
+    padding-top: 20px !important;
+    color: #9DFFDE !important;
+    font-size: 55px !important;
+    font-weight: bold !important;
+}
+.title-rukus:hover{
+    background-color:transparent;
+    text-decoration: none;
 }
 .header{
-    background-color: orange;
-    height: 50px;
+    height: 100px;
 }
 /* User sign in and sign forms. */
 .border-form-div {
@@ -60,8 +67,9 @@ html {
 }
 
 #banner {
-    height: 5em;
+    height: 7em;
     margin-bottom: 2em;
+    background-color: #363636 !important;
 }
 
 #logo {
@@ -73,38 +81,44 @@ ul
 {
     list-style-type: none;
 }
-.jumbotron
+
+.postframe
 {
-    background-color:#FFD1A3 !important;
+    background-color:#9DFFDE !important;
     border-radius:6px !important;
-    border: #FF9933 2px solid !important;
+    border: #75FFD1 2px solid !important;
+    height:100px !important;
+    font-size: small !important;
+    padding-bottom: 10px !important;
 }
-.jumbotron:hover
+
+.postframe:hover
 {
-    background-color:#FFEDE0 !important;
+    background-color:#C8FFED !important;
 }
 
 .votes
 {
-    font-size:60px!important;
+    font-size:30px!important;
 }
 
 .upvote{
     width: 0;
     height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
 
-    border-bottom: 20px solid black;
+    border-bottom: 10px solid black;
     cursor: pointer;
+    padding-top: 9px !important;
 }
 .downvote{
     width: 0;
     height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
 
-    border-top: 20px solid black;
+    border-top: 10px solid black;
     cursor: pointer;
 }
 
@@ -113,4 +127,22 @@ ul
     background-color:#EBEBEB;
     border: lightgray 4px solid;
     border-radius: 10px;
+}
+
+.post-content
+{
+    padding-top:15px !important;
+    font-size:15px !important;
+}
+
+.space
+{
+    padding: 10px !important;
+}
+
+#nav > ul > li > a:hover
+{
+    background-color: #C8FFED;
+    border-radius: 5px !important;
+    color: #363636 !important;
 }
