@@ -73,3 +73,44 @@ ul
 {
     list-style-type: none;
 }
+.jumbotron
+{
+    background-color:#FFD1A3 !important;
+    border-radius:6px !important;
+    border: #FF9933 2px solid !important;
+}
+.jumbotron:hover
+{
+    background-color:#FFEDE0 !important;
+}
+
+.votes
+{
+    font-size:60px!important;
+}
+
+.upvote{
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+
+    border-bottom: 20px solid black;
+    cursor: pointer;
+}
+.downvote{
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+
+    border-top: 20px solid black;
+    cursor: pointer;
+}
+
+.feed-background
+{
+    background-color:#EBEBEB;
+    border: lightgray 4px solid;
+    border-radius: 10px;
+}
