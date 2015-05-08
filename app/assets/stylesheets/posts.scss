@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #post_content {
-  width: 41em;
   height: 5em;
 }
 
@@ -61,4 +60,12 @@ body {
 
 .privacy-dropdown {
   width: 100px;
+}
+
+.feedpost {
+  padding: 0;
+}
+
+.postframe {
+  margin-bottom: 10px;
 }

@@ -135,11 +135,6 @@ ul
     font-size:15px !important;
 }
 
-.space
-{
-    padding: 10px !important;
-}
-
 #nav > ul > li > a:hover
 {
     background-color: #C8FFED;

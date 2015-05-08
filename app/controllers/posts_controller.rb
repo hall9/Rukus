@@ -4,8 +4,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    @post = Post.new
     @lat = params[:submit]
-    @posts = Post.all #@posts = Post.where(lon and lat is close)
+    #@posts = Post.all
+    @posts = Post.order(created_at: :desc)
   end
 
   # GET /posts/1
@@ -34,7 +36,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to feed_url, notice: 'Post was successfully created.' }
+        #format.html { redirect_to feed_url, notice: 'Post was successfully created.' }
+        format.html { redirect_to feed_url }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
