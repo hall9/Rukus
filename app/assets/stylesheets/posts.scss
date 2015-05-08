@@ -1,8 +1,25 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#post_content {
-  height: 5em;
+.post-content {
+  padding-top:15px !important;
+  font-size:15px !important;
+  height: 100px;
+}
+
+.postframe
+{
+  background-color:#9DFFDE !important;
+  border-radius:6px !important;
+  border: #75FFD1 2px solid !important;
+  height:100px !important;
+  font-size: small !important;
+  padding-bottom: 10px !important;
+}
+
+.postframe:hover
+{
+  background-color:#C8FFED !important;
 }
 
 body {

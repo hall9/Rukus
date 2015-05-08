@@ -82,21 +82,6 @@ ul
     list-style-type: none;
 }
 
-.postframe
-{
-    background-color:#9DFFDE !important;
-    border-radius:6px !important;
-    border: #75FFD1 2px solid !important;
-    height:100px !important;
-    font-size: small !important;
-    padding-bottom: 10px !important;
-}
-
-.postframe:hover
-{
-    background-color:#C8FFED !important;
-}
-
 .votes
 {
     font-size:30px!important;
@@ -129,11 +114,6 @@ ul
     border-radius: 10px;
 }
 
-.post-content
-{
-    padding-top:15px !important;
-    font-size:15px !important;
-}
 
 #nav > ul > li > a:hover
 {
