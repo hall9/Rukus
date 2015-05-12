@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 20150426201511) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "iptests", force: :cascade do |t|
+    t.string   "ipaddress"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text     "content"
     t.text     "lat"
