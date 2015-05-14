@@ -10,7 +10,13 @@ Rails.application.routes.draw do
   get 'posts/:id' => 'posts#index', as: :view
 
 
-  resources :comments, only: [:new, :create]
+  resources :comments, only: [:new, :create, :upvote] do
+    member do
+      put 'upvote', to: 'comment#upvote'
+      put 'downvote', to: 'post#downvote'
+    end
+  end
+
   get 'posts/:id/comment/new' => 'comments#new', as: :new
 
   devise_for :users
