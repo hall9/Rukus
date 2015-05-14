@@ -121,3 +121,14 @@ ul
     border-radius: 5px !important;
     color: #363636 !important;
 }
+.post-content
+{
+    color:#363636 !important;
+}
+
+.btn
+{
+    color: #333 !important;
+    border-color:#9DFFDE !important;
+    background-color: #C8FFED !important;
+}
