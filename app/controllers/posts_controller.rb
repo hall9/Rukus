@@ -14,9 +14,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-    #@comments = Post.find(params[:id]).comments
-    #@comments = Comment.where({Post:params[:id]})
     @comments = @post.comments
+    @comment = Comment.new
   end
 
   # GET /posts/new
