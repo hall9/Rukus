@@ -1,2 +1,29 @@
-<h1>Mystuff#myrukus</h1>
-<p>Find me in app/views/mystuff/myrukus.html.erb</p>
+
+<div class="col-md-6 feed-background" id="posts">
+  <br/>
+  <ul class="feedpost">
+    <br/>
+    <%@posts.each do |post| %>
+        <div class="postframe col-md-12" id="post">
+          <li>
+            <%= link_to view_url(post.id) do %>
+                <div class="col-md-10">
+                  <p class="post-content"><%=post.content%></p>
+                </div>
+            <%end%>
+            <div class="col-md-2 votes">
+              <%= link_to upvote_post_path(post), method: :put do %>
+                  <div class="upvote"></div>
+              <%end%>
+              <br>
+              <div class="vote"> <%=post.votes %> </div>
+              <br>
+              <%= link_to downvote_post_path(post), method: :put do %>
+                  <div class="downvote"></div>
+              <%end%>
+            </div>
+          </li>
+        </div>
+    <%end%>
+  </ul>
+</div>

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'mystuff/myrukus'
+  get 'myrukus' => 'mystuff#myrukus'
 
-  get 'mystuff/mycomments'
+  get 'mycomments' => 'mystuff#mycomments'
 
-  get 'mystuff/myfavorites'
+  get 'myfavorites' => 'mystuff#myfavorites'
 
   resources :posts, only: [:index, :new, :create, :show, :upvote, :downvote] do
     member do
