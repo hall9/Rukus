@@ -90,3 +90,19 @@ body {
 .input-file .input-group-addon { border: 0px; padding: 0px; }
 .input-file .input-group-addon .btn { border-radius: 0 4px 4px 0 }
 .input-file .input-group-addon input { cursor: pointer; position:absolute; width: 72px; z-index:2;top:0;right:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0; background-color:transparent; color:transparent; }
+
+.favorite {
+  unicode-bidi: bidi-override;
+  color: #404040;
+}
+.favorite > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.favorite > span:hover:before,
+.favorite > span:hover ~ span:before {
+  content: "\2605";
+  color: yellow;
+  position: absolute;
+}

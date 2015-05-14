@@ -154,3 +154,6 @@ ul
     padding:20px;
     margin-bottom: 15px;
 }
+a:hover, a:active, a:focus {
+    outline: 0;
+}
