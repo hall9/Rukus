@@ -14,7 +14,7 @@
                 <p class="post-content"><%=post.content%></p>
               </div>
               <%end%>
-              <div class="col-md-2 votes">
+              <div class="col-md-1 votes">
                 <%= link_to upvote_post_path(post), method: :put do %>
                     <div class="upvote"></div>
                 <%end%>
@@ -24,7 +24,8 @@
                 <%= link_to downvote_post_path(post), method: :put do %>
                     <div class="downvote"></div>
                 <%end%>
-
+              </div>
+              <div class="col-md-1 votes">
                 <%= link_to downvote_post_path(post), method: :put do %>
                     <div class="favorite">
                       <span>☆</span>

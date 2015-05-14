@@ -94,6 +94,7 @@ body {
 .favorite {
   unicode-bidi: bidi-override;
   color: #404040;
+  padding-top:100%;
 }
 .favorite > span {
   display: inline-block;
@@ -105,4 +106,8 @@ body {
   content: "\2605";
   color: yellow;
   position: absolute;
+}
+
+.favorite > a:hover, a:active, a:focus {
+  outline: 0;
 }
