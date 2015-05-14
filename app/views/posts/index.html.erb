@@ -24,6 +24,12 @@
                 <%= link_to downvote_post_path(post), method: :put do %>
                     <div class="downvote"></div>
                 <%end%>
+
+                <%= link_to downvote_post_path(post), method: :put do %>
+                    <div class="favorite">
+                      <span>☆</span>
+                    </div>
+                <%end%>
               </div>
               </li>
           </div>
