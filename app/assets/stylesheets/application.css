@@ -132,3 +132,25 @@ ul
     border-color:#9DFFDE !important;
     background-color: #C8FFED !important;
 }
+
+.comments{
+    background-color:white !important;
+    border: lightgray 1px solid !important;
+    height:70px !important;
+    font-size: small !important;
+}
+
+.comment{
+    padding-left: 15px;
+    padding-top:15px !important;
+    font-size:16px !important;
+    height: 100px;
+}
+
+.opcomments{
+    background-color:#C8FFED;
+    border: #9DFFDE 3px solid;
+    border-radius: 5px;
+    padding:20px;
+    margin-bottom: 15px;
+}
