@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20150426201511) do
     t.text     "long"
     t.integer  "votes"
     t.integer  "User_id"
-    t.integer  "postion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
