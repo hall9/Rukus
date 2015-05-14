@@ -70,6 +70,7 @@ html {
     height: 7em;
     margin-bottom: 2em;
     background-color: #363636 !important;
+    border-bottom: solid 10px lightgray;
 }
 
 #logo {
@@ -153,4 +154,13 @@ ul
     border-radius: 5px;
     padding:20px;
     margin-bottom: 15px;
+}
+
+.sticky {
+    position: fixed;
+    width:22%;
+    left: 29px;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
 }

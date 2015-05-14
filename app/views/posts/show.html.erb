@@ -26,17 +26,10 @@
 
     <div class="opcomments">
       <% @comments.each do |comment| %>
-        <div class="comments col-md-12">
+        <div class="comments">
           <!--<p class="votes"><%=comment.votes%></p>-->
-          <div class="comment col-md-9">
-            <%=comment.content%>
+            <div class="comment"><%=comment.content%></div>
           </div>
-          <div class="col-md-3">
-              <div class="upvote"></div>
-                <div class="vote">&nbsp;&nbsp;0</div>
-              <div class="downvote"></div>
-          </div>
-        </div>
           <%end%>
   </div>
 </div>
