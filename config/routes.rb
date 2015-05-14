@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :posts, only: [:index, :new, :create, :show, :upvote] do
+  resources :posts, only: [:index, :new, :create, :show, :upvote, :downvote] do
     member do
       put 'upvote', to: 'posts#upvote'
       put 'downvote', to: 'posts#downvote'
@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   end
 
   get 'posts/:id' => 'posts#index', as: :view
-
 
   resources :comments, only: [:new, :create]
   get 'posts/:id/comment/new' => 'comments#new', as: :new
