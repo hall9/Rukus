@@ -2,22 +2,33 @@
     <form action="#" method="post" role="form" enctype="multipart/form-data" class="facebook-share-box">
       <div class="share">
         <div class="panel panel-default">
-          <div class="panel-heading"><b>New Rukus Post</b></div>
-          <div class="panel-body">
-            <div class="">
-              <%= f.text_area :content, :placeholder => "Ready to make a Rukus?", :class=>'form-control message' %>
-            </div>
-          </div>
-          <div class="panel-footer">
-            <div class="row">
-              <%= f.hidden_field :User_id, :value => current_user.id %>
-              <div class="col-md-5">
-                <div class="form-group">
-                  <%= f.submit :class => 'btn btn-primary' %>
+              <div class="panel-body">
+                <div class="content-input">
+                  <%= f.text_area :content, :placeholder => "Ready to make a Rukus?", :class=>'form-control message' %>
+                </div>
+                <hr>
+                <div class="input-group input-file">
+                  <div class="form-control">
+                  </div>
+                <span class="input-group-addon">
+                  <a class='btn btn-primary'>
+                    Add Image
+                    <input type="file" name="field_name" onchange="$(this).parent().parent().parent().find('.form-control').html($(this).val());">
+                  </a>
+                </span>
                 </div>
               </div>
-            </div>
-          </div>
+              <div class="panel-footer">
+                <div class="row">
+                  <%= f.hidden_field :User_id, :value => current_user.id %>
+                  <div class="col-md-5">
+                    <div class="form-group">
+                      <%= f.submit :class => 'btn btn-primary' %>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
         </div>
       </div>
     </form>
