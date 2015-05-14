@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'mystuff/myrukus'
+
+  get 'mystuff/mycomments'
+
+  get 'mystuff/myfavorites'
+
   resources :posts, only: [:index, :new, :create, :show, :upvote, :downvote] do
     member do
       put 'upvote', to: 'posts#upvote'
