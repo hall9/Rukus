@@ -1,4 +1,4 @@
-<div class="col-md-6 feed-background" id="posts">
+<div class="col-md-7 feed-background" id="posts">
     <br/>
   <p style="font-size: 24px; font-weight:bold;">All of the Rukus</p>
   <hr style="border: solid 5px darkgray;">
@@ -12,7 +12,7 @@
           <div class="postframe col-md-12" id="post">
 
               <%= link_to view_url(post.id) do %>
-              <div class="col-md-10">
+              <div class="col-md-9">
                 <p class="post-content"><%=post.content%></p>
               </div>
               <%end%>
@@ -27,14 +27,16 @@
                     <div class="downvote"></div>
                 <%end%>
               </div>
-              <div class="col-md-1 votes">
+              <div class="col-md-2 votes">
                 <%= link_to favorite_post_path(post), method: :put do %>
                     <div class="favorite">
                       <span>☆</span>
                     </div>
                 <%end%>
+                <br/>
+                <br/>
+                <p> comments: <%=post.comments.count %></p>
               </div>
-
           </div>
           </li>
       <%end%>

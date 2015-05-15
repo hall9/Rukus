@@ -2,17 +2,11 @@
   <br/>
   <p style="font-size: 24px; font-weight:bold;">My Comments</p>
   <hr style="border: solid 5px darkgray;">
-  <div class="opcomments">
+  <div class="">
     <% @comments.each do |comment| %>
         <div class="comments col-md-12">
-          <!--<p class="votes"><%=comment.votes%></p>-->
           <div class="comment col-md-9">
             <%=comment.content%>
-          </div>
-          <div class="col-md-3">
-            <div class="upvote"></div>
-            <div class="vote">&nbsp;&nbsp;0</div>
-            <div class="downvote"></div>
           </div>
         </div>
     <%end%>
