@@ -10,10 +10,15 @@
       <%@posts.each do |post| %>
           <li>
           <div class="postframe col-md-12" id="post">
-
               <%= link_to view_url(post.id) do %>
               <div class="col-md-9">
-                <p class="post-content"><%=post.content%></p>
+                <p class="post-content">
+                  <%=post.content%>
+                  <% if post.pic.exists? %>
+                      <%= image_tag post.pic.url(:medium) %>
+                  <% else %>
+                <% end %>
+                </p>
               </div>
               <%end%>
 

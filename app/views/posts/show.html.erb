@@ -5,7 +5,12 @@
   <hr style="border: solid 5px darkgray;">
   <div class="postframe col-md-12" style="margin-bottom:30px !important;" id="post">
           <div class="col-md-10">
-            <p class="post-content"><%=@post.content%></p>
+            <p class="post-content">
+              <%=@post.content%>
+              <% if @post.pic.exists? %>
+                <%= image_tag @post.pic.url(:medium) %>
+              <% end %>
+            </p>
           </div>
       <div class="col-md-2 votes">
         <%= link_to upvote_post_path(@post), method: :put do %>
