@@ -8,7 +8,8 @@ class PostsController < ApplicationController
     @lat = params[:submit]
     #@posts = Post.all
     @posts = Post.order(created_at: :desc)
-    @favorites = Favorite.where(User_id: current_user)
+    @favorites = Post.joins(:favorites).where(:favorites => { :User_id =>  current_user})
+
   end
 
   # GET /posts/1

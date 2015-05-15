@@ -111,3 +111,29 @@ body {
 .favorite > a:hover, a:active, a:focus {
   outline: 0;
 }
+.favorite-clicked > span
+{
+  content: "\2605";
+  color: yellow;
+  position: absolute;
+}
+.favorite-clicked {
+  unicode-bidi: bidi-override;
+  color: #404040;
+  padding-top:10px;
+}
+.favorite-clicked > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.favorite-clicked > span:hover:before,
+.favorite-clicked > span:hover ~ span:before {
+  content: "\2605";
+  color: yellow;
+  position: absolute;
+}
+
+.favorite-clicked > a:hover, a:active, a:focus {
+  outline: 0;
+}

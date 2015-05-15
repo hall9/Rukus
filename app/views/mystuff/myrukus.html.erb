@@ -9,11 +9,11 @@
         <div class="postframe col-md-12" id="post">
           <li>
             <%= link_to view_url(post.id) do %>
-                <div class="col-md-10">
+                <div class="col-md-9">
                   <p class="post-content"><%=post.content%></p>
                 </div>
             <%end%>
-            <div class="col-md-2 votes">
+            <div class="col-md-1 votes">
               <%= link_to upvote_post_path(post), method: :put do %>
                   <div class="upvote"></div>
               <%end%>
@@ -23,6 +23,25 @@
               <%= link_to downvote_post_path(post), method: :put do %>
                   <div class="downvote"></div>
               <%end%>
+            </div>
+
+            <div class="col-md-2 votes">
+              <% if @favorites.include?(post) %>
+                  <%= link_to favorite_post_path(post), method: :put do %>
+                      <div class="favorite-clicked">
+                        <span>☆</span>
+                      </div>
+                  <%end%>
+              <%else%>
+                  <%= link_to favorite_post_path(post), method: :put do %>
+                      <div class="favorite">
+                        <span>☆</span>
+                      </div>
+                  <%end%>
+              <%end%>
+              <br/>
+              <br/>
+              <p> comments: <%=post.comments.count %></p>
             </div>
           </li>
         </div>
