@@ -16,6 +16,7 @@
                 <p class="post-content"><%=post.content%></p>
               </div>
               <%end%>
+
               <div class="col-md-1 votes">
                 <%= link_to upvote_post_path(post), method: :put do %>
                     <div class="upvote"></div>
@@ -29,9 +30,13 @@
               </div>
               <div class="col-md-2 votes">
                 <%= link_to favorite_post_path(post), method: :put do %>
-                    <div class="favorite">
-                      <span>☆</span>
-                    </div>
+                    <%=@favorites.each do |favorite| %>
+                        <% if favorite.Post_id == post.id %>
+                            <div class="favorite">
+                              <span>☆</span>
+                            </div>
+                        <%end%>
+                    <%end%>
                 <%end%>
                 <br/>
                 <br/>
@@ -42,3 +47,9 @@
       <%end%>
     </ul>
 </div>
+
+<!--<#%= link_to favorite_post_path(post), method: :put do %>
+<div class="favorite">
+  <span>☆</span>
+</div>
+<#%end%>
