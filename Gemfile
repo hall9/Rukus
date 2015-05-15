@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem "paperclip", "~> 4.2"
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
