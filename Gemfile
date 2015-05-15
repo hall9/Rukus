@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
+gem "paperclip"
 
 gem 'geokit-rails'
 

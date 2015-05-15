@@ -8,14 +8,8 @@
                 </div>
                 <hr>
                 <div class="input-group input-file">
-                  <div class="form-control">
-                  </div>
-                <span class="input-group-addon">
-                  <a class='btn btn-primary'>
                     Add Image
-                    <input type="file" name="field_name" onchange="$(this).parent().parent().parent().find('.form-control').html($(this).val());">
-                  </a>
-                </span>
+                    <%= f.file_field :pic %>
                 </div>
               </div>
               <div class="panel-footer">
