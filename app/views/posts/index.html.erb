@@ -8,6 +8,55 @@
       </div>
       <br/>
       <%@posts.each do |post| %>
+          <% if post.pic.exists? %>
+          <li>
+            <div class="postframe-pic col-md-12" id="post">
+              <%= link_to view_url(post.id) do %>
+                  <div class="col-md-9">
+                    <p class="post-content">
+                      <%=post.content%>
+                      <% if post.pic.exists? %>
+                          <%= image_tag post.pic.url(:medium) %>
+                      <% else %>
+                      <% end %>
+                    </p>
+                  </div>
+              <%end%>
+
+              <div class="col-md-1 votes">
+                <%= link_to upvote_post_path(post), method: :put do %>
+                    <div class="upvote"></div>
+                <%end%>
+                <br>
+                <div class="vote"> <%=post.votes %> </div>
+                <br>
+                <%= link_to downvote_post_path(post), method: :put do %>
+                    <div class="downvote"></div>
+                <%end%>
+              </div>
+              <div class="col-md-2 votes">
+                <% if @favorites.include?(post) %>
+                    <%= link_to favorite_post_path(post), method: :put do %>
+                        <div class="favorite-clicked">
+                          <span>☆</span>
+
+                        </div>
+                    <%end%>
+                <%else%>
+                    <%= link_to favorite_post_path(post), method: :put do %>
+                        <div class="favorite">
+                          <span>☆</span>
+                        </div>
+                    <%end%>
+                <%end%>
+                <br/>
+                <br/>
+                <p> comments: <%=post.comments.count %></p>
+              </div>
+            </div>
+          </li>
+              <br/>
+        <%else%>
           <li>
           <div class="postframe col-md-12" id="post">
               <%= link_to view_url(post.id) do %>
@@ -54,6 +103,7 @@
               </div>
           </div>
           </li>
+          <%end%>
       <%end%>
     </ul>
 </div>

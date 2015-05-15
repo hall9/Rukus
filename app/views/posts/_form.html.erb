@@ -7,9 +7,13 @@
                   <%= f.text_area :content, :placeholder => "Ready to make a Rukus?", :class=>'form-control message' %>
                 </div>
                 <hr>
-                <div class="input-group input-file">
-                    Add Image
+                <div class="input-group input-file col-md-12">
+                  <div class="col-md-2">
+                    <p>Add Image</p>
+                  </div>
+                  <div class="col=md-10 addpicbtn">
                     <%= f.file_field :pic %>
+                  </div>
                 </div>
               </div>
               <div class="panel-footer">

@@ -18,6 +18,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = @post.comments
     @comment = Comment.new
+    @favorites = Post.joins(:favorites).where(:favorites => { :User_id =>  current_user})
+
   end
 
   # GET /posts/new

@@ -3,40 +3,120 @@
   <br/>
   <p style="font-size: 24px; font-weight:bold;">Comment on all this Rukus</p>
   <hr style="border: solid 5px darkgray;">
-  <div class="postframe col-md-12" style="margin-bottom:30px !important;" id="post">
-          <div class="col-md-10">
-            <p class="post-content">
-              <%=@post.content%>
-              <% if @post.pic.exists? %>
-                <%= image_tag @post.pic.url(:medium) %>
-              <% end %>
-            </p>
+  <% if @post.pic.exists? %>
+        <div class="postframe-pic col-md-12" id="post">
+          <%= link_to view_url(@post.id) do %>
+              <div class="col-md-9">
+                <p class="post-content">
+                  <%=@post.content%>
+                  <% if @post.pic.exists? %>
+                      <%= image_tag @post.pic.url(:medium) %>
+                  <% else %>
+                  <% end %>
+                </p>
+              </div>
+          <%end%>
+
+          <div class="col-md-1 votes">
+            <%= link_to upvote_post_path(@post), method: :put do %>
+                <div class="upvote"></div>
+            <%end%>
+            <br>
+            <div class="vote"> <%=@post.votes %> </div>
+            <br>
+            <%= link_to downvote_post_path(@post), method: :put do %>
+                <div class="downvote"></div>
+            <%end%>
           </div>
-      <div class="col-md-2 votes">
-        <%= link_to upvote_post_path(@post), method: :put do %>
-            <div class="upvote"></div>
-        <%end%>
-        <br>
-        <div class="vote"> <%=@post.votes%> </div>
-        <br>
-        <%= link_to downvote_post_path(@post), method: :put do %>
-            <div class="downvote"></div>
+          <div class="col-md-2 votes">
+            <% if @favorites.include?(@post) %>
+                <%= link_to favorite_post_path(@post), method: :put do %>
+                    <div class="favorite-clicked">
+                      <span>?</span>
+
+                    </div>
+                <%end%>
+            <%else%>
+                <%= link_to favorite_post_path(@post), method: :put do %>
+                    <div class="favorite">
+                      <span>☆</span>
+                    </div>
+                <%end%>
+            <%end%>
+            <br/>
+            <br/>
+            <p> comments: <%=@post.comments.count %></p>
+          </div>
+        </div>
+      <div id="commentinput">
+        <%= render :partial => '/comments/form' %>
+      </div>
+
+      <div class="opcomments">
+        <% @comments.each do |comment| %>
+            <div class="comments">
+              <!--<p class="votes"><%=comment.votes%></p>-->
+              <div class="comment"><%=comment.content%></div>
+            </div>
         <%end%>
       </div>
-  </div>
-  <div>
-    <br>
-  </div>
-  <div id="commentinput">
-    <%= render :partial => '/comments/form' %>
-  </div>
-
-    <div class="opcomments">
-      <% @comments.each do |comment| %>
-        <div class="comments">
-          <!--<p class="votes"><%=comment.votes%></p>-->
-            <div class="comment"><%=comment.content%></div>
-          </div>
+      <br/>
+  <%else%>
+        <div class="postframe col-md-12" id="post">
+          <%= link_to view_url(@post.id) do %>
+              <div class="col-md-9">
+                <p class="post-content">
+                  <%=@post.content%>
+                  <% if @post.pic.exists? %>
+                      <%= image_tag @post.pic.url(:medium) %>
+                  <% else %>
+                  <% end %>
+                </p>
+              </div>
           <%end%>
-  </div>
+
+          <div class="col-md-1 votes">
+            <%= link_to upvote_post_path(@post), method: :put do %>
+                <div class="upvote"></div>
+            <%end%>
+            <br>
+            <div class="vote"> <%=@post.votes %> </div>
+            <br>
+            <%= link_to downvote_post_path(@post), method: :put do %>
+                <div class="downvote"></div>
+            <%end%>
+          </div>
+          <div class="col-md-2 votes">
+            <% if @favorites.include?(@post) %>
+                <%= link_to favorite_post_path(@post), method: :put do %>
+                    <div class="favorite-clicked">
+                      <span>?</span>
+
+                    </div>
+                <%end%>
+            <%else%>
+                <%= link_to favorite_post_path(@post), method: :put do %>
+                    <div class="favorite">
+                      <span>☆</span>
+                    </div>
+                <%end%>
+            <%end%>
+            <br/>
+            <br/>
+            <p> comments: <%=@post.comments.count %></p>
+          </div>
+        </div>
+      <div id="commentinput">
+        <%= render :partial => '/comments/form' %>
+      </div>
+
+      <div class="opcomments">
+        <% @comments.each do |comment| %>
+            <div class="comments">
+              <!--<p class="votes"><%=comment.votes%></p>-->
+              <div class="comment"><%=comment.content%></div>
+            </div>
+        <%end%>
+      </div>
+  <%end%>
 </div>
