@@ -69,6 +69,19 @@ class PostsController < ApplicationController
     end
   end
 
+  def favorite
+     if Favorite.exists?(User_id: current_user.id, Post_id: params[:id])
+       @favorite = Favorite.find_by(User_id: current_user.id, Post_id: params[:id])
+       @favorite.destroy
+     else
+       @favorite = Favorite.new
+       @favorite.User_id = current_user.id
+       @favorite.Post_id = params[:id]
+       @favorite.save
+     end
+     redirect_to(feed_path)
+  end
+
   def upvote
     @post = Post.find(params[:id])
     @post.votes = @post.votes+1

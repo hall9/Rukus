@@ -6,10 +6,11 @@ Rails.application.routes.draw do
 
   get 'myfavorites' => 'mystuff#myfavorites'
 
-  resources :posts, only: [:index, :new, :create, :show, :upvote, :downvote] do
+  resources :posts, only: [:index, :new, :create, :show, :upvote, :downvote, :favorite] do
     member do
       put 'upvote', to: 'posts#upvote'
       put 'downvote', to: 'posts#downvote'
+      put 'favorite', to: 'posts#favorite'
     end
   end
 
