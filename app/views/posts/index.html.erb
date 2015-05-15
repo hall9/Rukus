@@ -30,13 +30,9 @@
               </div>
               <div class="col-md-2 votes">
                 <%= link_to favorite_post_path(post), method: :put do %>
-                    <%=@favorites.each do |favorite| %>
-                        <% if favorite.Post_id == post.id %>
-                            <div class="favorite">
-                              <span>☆</span>
-                            </div>
-                        <%end%>
-                    <%end%>
+                    <div class="favorite">
+                      <span>☆</span>
+                    </div>
                 <%end%>
                 <br/>
                 <br/>

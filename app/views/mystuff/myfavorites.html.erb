@@ -3,7 +3,7 @@
   <p style="font-size: 24px; font-weight:bold;">My Favorites</p>
   <hr style="border: solid 5px darkgray;">
   <ul class="feedpost">
-    <%@posts.each do |post| %>
+    <%@favorites.each do |post| %>
         <div class="postframe col-md-12" id="post">
           <li>
             <%= link_to view_url(post.id) do %>

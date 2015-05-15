@@ -2,13 +2,41 @@
   <br/>
   <p style="font-size: 24px; font-weight:bold;">My Comments</p>
   <hr style="border: solid 5px darkgray;">
-  <div class="">
-    <% @comments.each do |comment| %>
-        <div class="comments col-md-12">
-          <div class="comment col-md-9">
-            <%=comment.content%>
+  <ul class="feedpost">
+    <br/>
+    <%@comments.each do |post| %>
+        <li>
+          <div class="postframe col-md-12" id="post">
+
+            <%= link_to view_url(post.id) do %>
+                <div class="col-md-9">
+                  <p class="post-content"><%=post.content%></p>
+                </div>
+            <%end%>
+
+            <div class="col-md-1 votes">
+              <%= link_to upvote_post_path(post), method: :put do %>
+                  <div class="upvote"></div>
+              <%end%>
+              <br>
+              <div class="vote"> <%=post.votes %> </div>
+              <br>
+              <%= link_to downvote_post_path(post), method: :put do %>
+                  <div class="downvote"></div>
+              <%end%>
+            </div>
+            <div class="col-md-2 votes">
+              <%= link_to favorite_post_path(post), method: :put do %>
+                  <div class="favorite">
+                    <span>☆</span>
+                  </div>
+              <%end%>
+              <br/>
+              <br/>
+              <p> comments: <%=post.comments.count %></p>
+            </div>
           </div>
-        </div>
+        </li>
     <%end%>
-  </div>
+  </ul>
 </div>
